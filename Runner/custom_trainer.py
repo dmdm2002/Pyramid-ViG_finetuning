@@ -51,7 +51,7 @@ class train(param):
 
         # ckp load or model init
         if self.CKP_LOAD:
-            ckp = torch.load(f'C:/Users/rlawj/WORK/SIDE_PROJECT/DACON/pretrain_weight/pvig_b_83.66.pth.tar', map_location=self.device)
+            ckp = torch.load(f'pvig_b_83.66.pth.tar', map_location=self.device)
             model.load_state_dict(ckp)
             epoch = 0
 
