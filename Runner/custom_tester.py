@@ -50,7 +50,7 @@ class test(param):
         model.to(self.device)
 
         # ckp load
-        ckp = torch.load(f'C:/Users/rlawj/WORK/SIDE_PROJECT/DACON/BLOCK_CLASSIFICATION/backup/try2/ckp_aug_fine_tuning/0.pth', map_location=self.device)
+        ckp = torch.load(f'{self.OUTPUT_CKP}/0.pth', map_location=self.device)
         model.load_state_dict(ckp['model_state_dict'])
 
         # define data transform
