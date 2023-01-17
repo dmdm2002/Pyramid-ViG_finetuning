@@ -1,10 +1,10 @@
 class param(object):
     def __init__(self):
         # Path
-        self.ROOT = 'C:/Users/rlawj/WORK/SIDE_PROJECT/DACON/BLOCK_CLASSIFICATION'
+        self.ROOT = ''
         self.DATASET_PATH = f'{self.ROOT}/DB/'
-        self.OUTPUT_CKP = f'{self.ROOT}/backup/try2/ckp_aug_fine_tuning'
-        self.OUTPUT_LOG = f'{self.ROOT}/backup/try2/log_aug_fine_tuning'
+        self.OUTPUT_CKP = f'{self.ROOT}/backup/ckp'
+        self.OUTPUT_LOG = f'{self.ROOT}/backup/log'
         self.CKP_LOAD = True
 
         # Data
@@ -13,8 +13,6 @@ class param(object):
         # Train or Test
         self.EPOCH = 5
         self.LR = 1e-4
-        self.B1 = 0.5
-        self.B2 = 0.999
         self.BATCHSZ = 8
 
         # Handler
