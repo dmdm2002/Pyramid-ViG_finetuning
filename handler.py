@@ -1,7 +1,7 @@
 from utils.Option import param
 # from Runner.trainer import train
-from Runner.official_trainer import train
-from Runner.official_tester import test
+from Runner.custom_trainer import train
+from Runner.custom_tester import test
 
 
 class driver(param):
