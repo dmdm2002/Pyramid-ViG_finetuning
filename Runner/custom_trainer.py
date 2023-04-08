@@ -32,13 +32,16 @@ class train(param):
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     def init_weight(self, module):
-        class_name = module.__class__.__name__
-
-        if class_name.find("Conv2d") != -1 and class_name.find("EdgeConv2d") == -1 and class_name.find("DynConv2d") == -1:
+        if isinstance(module, nn.Conv2d):
             nn.init.normal_(module.weight.data, 0.0, 0.02)
+            nn.init.constant(module.bias.data, 0.0)
 
-        elif class_name.find("BatchNorm2d") != -1:
+        elif isinstance(module, nn.BatchNorm2d):
             nn.init.normal_(module.weight.data, 1.0, 0.02)
+            nn.init.constant(module.bias.data, 0.0)
+
+        elif isinstance(module, nn.Linear):
+            nn.init.normal_(module.weight.data, 0.0, 0.02)
             nn.init.constant(module.bias.data, 0.0)
 
     def run(self):
