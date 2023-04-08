@@ -5,7 +5,7 @@ import pandas as pd
 import re
 
 
-class Loader(data.DataLoader):
+class Loader(data.Dataset):
     def __init__(self, root, run_type='train', transform=None, aug=False):
         super(Loader, self).__init__(self)
         self.root = root
